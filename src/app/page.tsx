@@ -2,7 +2,6 @@ import Navbar from "@/components/layout/Navbar";
 import Hero from "@/components/sections/Hero";
 import MarqueeStrip from "@/components/sections/MarqueeStrip";
 import SignatureDishes from "@/components/sections/SignatureDishes";
-import MenuSection from "@/components/sections/MenuSection";
 import DealsSection from "@/components/sections/DealsSection";
 import StorySection from "@/components/sections/StorySection";
 import GallerySection from "@/components/sections/GallerySection";
@@ -12,7 +11,7 @@ import Footer from "@/components/layout/Footer";
 
 export default function Home() {
   return (
-    <main className="relative min-h-screen bg-[#070605] text-[#fcfcfc] overflow-x-hidden">
+    <main className="relative min-h-screen bg-[#0A1A4A] text-white overflow-x-hidden">
       {/* Sticky Glass Navbar */}
       <Navbar />
 
@@ -22,11 +21,8 @@ export default function Home() {
       {/* Infinite Glowing Marquee Ribbon */}
       <MarqueeStrip />
 
-      {/* 3D Tilt Signature Dishes */}
+      {/* Signature Cravings Showcase */}
       <SignatureDishes />
-
-      {/* Full Filterable Menu with Sticky Tabs */}
-      <MenuSection />
 
       {/* High-Impact Deals & Combos Showcase */}
       <DealsSection />

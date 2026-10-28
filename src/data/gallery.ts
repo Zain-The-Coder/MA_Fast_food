@@ -1,7 +1,7 @@
 export interface GalleryItem {
   id: string;
   title: string;
-  category: "Kitchen & Shop" | "Burgers & Sizzles" | "Artisan Pizza" | "Crispy Specials";
+  category: "Kitchen & Shop" | "Crispy Broast & Zingers" | "Pastas & Rice" | "Sandwiches & Sides";
   src: string;
   aspectRatio: "square" | "tall" | "wide";
   caption: string;
@@ -10,11 +10,11 @@ export interface GalleryItem {
 export const galleryItems: GalleryItem[] = [
   {
     id: "gal-1",
-    title: "Double Smash on the Griddle",
-    category: "Burgers & Sizzles",
-    src: "/assets/generated/hero-burger.webp",
+    title: "Giant Crispy Zinger Burger",
+    category: "Crispy Broast & Zingers",
+    src: "/assets/hero/hero-1-zinger.jpg",
     aspectRatio: "wide",
-    caption: "Caramelized crust seared at 500°F with molten cheddar.",
+    caption: "Audible crunch, marinated 24 hours, and fried golden crisp per order.",
   },
   {
     id: "gal-2",
@@ -22,23 +22,23 @@ export const galleryItems: GalleryItem[] = [
     category: "Kitchen & Shop",
     src: "/assets/shop/image_1.webp",
     aspectRatio: "tall",
-    caption: "Where the sizzle begins. Open kitchen standard.",
+    caption: "Where the sizzle begins. Open kitchen standard and hygiene guaranteed.",
   },
   {
     id: "gal-3",
-    title: "Crispy Golden Hand-Cut Fries",
-    category: "Crispy Specials",
-    src: "/assets/generated/fries.webp",
+    title: "Velvety Chicken Alfredo Pasta",
+    category: "Pastas & Rice",
+    src: "/assets/hero/hero-3-pasta.jpg",
     aspectRatio: "square",
-    caption: "Double fried for maximum crunch, dusted with herb salt.",
+    caption: "Creamy white garlic butter sauce with succulent grilled chicken strips.",
   },
   {
     id: "gal-4",
-    title: "Firehouse Crunchy Zinger",
-    category: "Burgers & Sizzles",
-    src: "/assets/generated/zinger-burger.webp",
+    title: "Double Beef Smash Burger",
+    category: "Crispy Broast & Zingers",
+    src: "/assets/hero/hero-2-beef.jpg",
     aspectRatio: "tall",
-    caption: "Marinated 24h, battered fresh per order.",
+    caption: "Juicy griddled patties dripping molten cheddar and caramelized onions.",
   },
   {
     id: "gal-5",
@@ -46,15 +46,15 @@ export const galleryItems: GalleryItem[] = [
     category: "Kitchen & Shop",
     src: "/assets/shop/image_2.webp",
     aspectRatio: "wide",
-    caption: "Modern urban dining space designed for friends and families.",
+    caption: "Welcoming dining space designed for friends, families, and food lovers.",
   },
   {
     id: "gal-6",
-    title: "Molten Mozzarella Pull",
-    category: "Artisan Pizza",
-    src: "/assets/generated/pizza-pull.webp",
+    title: "MashaAllah Broast Family Feast",
+    category: "Crispy Broast & Zingers",
+    src: "/assets/hero/hero-5-combo.jpg",
     aspectRatio: "square",
-    caption: "Sourdough fermented crust with Italian cupping pepperoni.",
+    caption: "Pressure-fried crispy broast, golden fries, soft dinner buns and garlic dip.",
   },
   {
     id: "gal-7",
@@ -62,22 +62,22 @@ export const galleryItems: GalleryItem[] = [
     category: "Kitchen & Shop",
     src: "/assets/shop/image_3.webp",
     aspectRatio: "square",
-    caption: "Open late night till 2:30 AM every weekend.",
+    caption: "Open late night till 2:30 AM every weekend on Food Street.",
   },
   {
     id: "gal-8",
-    title: "Ultimate Trio Box Flat Lay",
-    category: "Crispy Specials",
-    src: "/assets/generated/combo-spread.webp",
+    title: "Crispy Wrap & Hot Golden Fries",
+    category: "Sandwiches & Sides",
+    src: "/assets/hero/hero-6-fries-wrap.jpg",
     aspectRatio: "wide",
-    caption: "Our crowd favorite combo spread ready for the table.",
+    caption: "Golden fried tenders in soft flatbread with piping hot crinkle fries.",
   },
   {
     id: "gal-9",
-    title: "Toasted Mediterranean Wrap",
-    category: "Crispy Specials",
-    src: "/assets/generated/shawarma-wrap.webp",
+    title: "Triple-Decker Club Sandwich",
+    category: "Sandwiches & Sides",
+    src: "https://images.unsplash.com/photo-1528735602780-2552fd46c7af?w=700&auto=format&fit=crop&q=80",
     aspectRatio: "tall",
-    caption: "Charcoal aroma with luscious homemade toum sauce.",
+    caption: "Toasted bread with seasoned chicken, fried egg, cheese, and creamy mayo.",
   },
 ];

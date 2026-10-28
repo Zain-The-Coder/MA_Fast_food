@@ -2,7 +2,7 @@
 
 import Image from "next/image";
 import Link from "next/link";
-import { Flame, ArrowUp, Phone, MapPin, Heart } from "lucide-react";
+import { ArrowUp, Phone, MapPin } from "lucide-react";
 import { siteConfig } from "@/data/site";
 
 function InstagramIcon({ className = "w-4 h-4" }: { className?: string }) {
@@ -29,30 +29,30 @@ export default function Footer() {
   };
 
   return (
-    <footer className="relative bg-[#050403] text-white pt-20 pb-10 border-t border-white/10 overflow-hidden select-none">
+    <footer className="relative bg-[#071333] text-white pt-20 pb-10 border-t border-white/10 overflow-hidden select-none">
       {/* Background flare */}
-      <div className="absolute top-0 left-1/2 -translate-x-1/2 w-3/4 h-[2px] bg-gradient-to-r from-transparent via-orange-500 to-transparent" />
-      <div className="absolute bottom-0 left-1/2 -translate-x-1/2 w-[800px] h-[300px] bg-orange-600/5 blur-[160px] pointer-events-none" />
+      <div className="absolute top-0 left-1/2 -translate-x-1/2 w-3/4 h-[2px] bg-gradient-to-r from-transparent via-[#1E4FBF] to-transparent" />
+      <div className="absolute bottom-0 left-1/2 -translate-x-1/2 w-[800px] h-[300px] bg-[#1E4FBF]/10 blur-[160px] pointer-events-none" />
 
       <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-12 gap-12 pb-16 border-b border-white/10">
           {/* Brand Col (5 cols) */}
           <div className="lg:col-span-5 flex flex-col items-start">
-            <Link href="#hero" className="flex items-center gap-3 mb-4 group">
-              <div className="relative w-12 h-12 md:w-14 md:h-14">
-                <Image
-                  src={siteConfig.brandAssets.logo}
-                  alt={siteConfig.name}
-                  fill
-                  className="object-contain drop-shadow-[0_0_20px_rgba(255,75,18,0.5)]"
-                />
-              </div>
-              <span className="font-display text-2xl md:text-3xl font-black uppercase tracking-wider bg-gradient-to-r from-white via-amber-200 to-orange-400 bg-clip-text text-transparent">
-                {siteConfig.name}
-              </span>
+            <Link href="#hero" className="flex items-center mb-4 group">
+              <Image
+                src="/logo.png"
+                alt={siteConfig.name}
+                width={1320}
+                height={709}
+                className="h-14 md:h-16 w-auto object-contain drop-shadow-[0_2px_12px_rgba(255,255,255,0.45)] transition-transform duration-300 group-hover:scale-105"
+              />
             </Link>
 
-            <p className="text-zinc-400 text-xs sm:text-sm max-w-sm leading-relaxed mb-6">
+            <span className="font-display text-2xl md:text-3xl font-black uppercase tracking-wider text-white mb-2">
+              {siteConfig.name}
+            </span>
+
+            <p className="text-sky-200/80 text-xs sm:text-sm max-w-sm leading-relaxed mb-6">
               {siteConfig.description}
             </p>
 
@@ -70,7 +70,7 @@ export default function Footer() {
                     target="_blank"
                     rel="noopener noreferrer"
                     aria-label={soc.name}
-                    className="w-10 h-10 rounded-full bg-white/5 border border-white/10 flex items-center justify-center text-zinc-300 hover:text-white hover:bg-orange-600 hover:border-orange-500 transition-all shadow-sm"
+                    className="w-10 h-10 rounded-full bg-white/10 border border-white/15 flex items-center justify-center text-sky-200 hover:text-white hover:bg-[#1E4FBF] hover:border-sky-400 transition-all shadow-sm"
                   >
                     <Icon className="w-4 h-4" />
                   </a>
@@ -81,56 +81,56 @@ export default function Footer() {
 
           {/* Quick Links (3 cols) */}
           <div className="lg:col-span-3">
-            <h4 className="font-display text-lg font-black tracking-wider uppercase text-amber-300 mb-4">
+            <h4 className="font-display text-lg font-black tracking-wider uppercase text-white mb-4">
               Quick Navigation
             </h4>
-            <ul className="flex flex-col gap-2.5 text-xs text-zinc-400">
+            <ul className="flex flex-col gap-2.5 text-xs text-sky-200/70">
               <li>
-                <a href="#hero" className="hover:text-orange-400 transition-colors">Home Slider</a>
+                <Link href="/#hero" className="hover:text-white transition-colors">Home Slider</Link>
               </li>
               <li>
-                <a href="#signatures" className="hover:text-orange-400 transition-colors">Signature Smash Burgers</a>
+                <Link href="/#signatures" className="hover:text-white transition-colors">Signature Cravings</Link>
               </li>
               <li>
-                <a href="#menu" className="hover:text-orange-400 transition-colors">Full Food Menu</a>
+                <Link href="/menu" className="hover:text-white transition-colors text-sky-300 font-semibold">Full Food Menu</Link>
               </li>
               <li>
-                <a href="#deals" className="hover:text-orange-400 transition-colors">Combos & Specials</a>
+                <Link href="/#deals" className="hover:text-white transition-colors">Broast Family Feast</Link>
               </li>
               <li>
-                <a href="#story" className="hover:text-orange-400 transition-colors">Kitchen Story</a>
+                <Link href="/#story" className="hover:text-white transition-colors">Kitchen Story</Link>
               </li>
               <li>
-                <a href="#gallery" className="hover:text-orange-400 transition-colors">Food Photography</a>
+                <Link href="/#gallery" className="hover:text-white transition-colors">Food Photography</Link>
               </li>
               <li>
-                <a href="#contact" className="hover:text-orange-400 transition-colors">Opening Hours & Location</a>
+                <Link href="/#contact" className="hover:text-white transition-colors">Opening Hours & Location</Link>
               </li>
             </ul>
           </div>
 
           {/* Contact Summary (4 cols) */}
           <div className="lg:col-span-4">
-            <h4 className="font-display text-lg font-black tracking-wider uppercase text-amber-300 mb-4">
+            <h4 className="font-display text-lg font-black tracking-wider uppercase text-white mb-4">
               Visit The Shop
             </h4>
-            <div className="flex flex-col gap-3 text-xs text-zinc-400">
+            <div className="flex flex-col gap-3 text-xs text-sky-200/80">
               <div className="flex items-start gap-2.5">
-                <MapPin className="w-4 h-4 text-orange-400 shrink-0 mt-0.5" />
+                <MapPin className="w-4 h-4 text-sky-400 shrink-0 mt-0.5" />
                 <span>{siteConfig.contact.address.full}</span>
               </div>
               <div className="flex items-center gap-2.5">
-                <Phone className="w-4 h-4 text-orange-400 shrink-0" />
+                <Phone className="w-4 h-4 text-sky-400 shrink-0" />
                 <a href={`tel:${siteConfig.contact.phone}`} className="hover:text-white transition-colors">
                   {siteConfig.contact.displayPhone}
                 </a>
               </div>
-              <div className="p-4 rounded-2xl bg-white/[0.03] border border-white/5 mt-2">
-                <span className="text-[10px] uppercase font-bold text-orange-400 block mb-1">
+              <div className="p-4 rounded-2xl bg-white/[0.05] border border-white/10 mt-2">
+                <span className="text-[10px] uppercase font-bold text-sky-300 block mb-1">
                   Daily Fresh Hours
                 </span>
-                <span className="text-zinc-200 font-semibold block">12:00 PM – 02:30 AM (Weekends)</span>
-                <span className="text-zinc-400 text-[11px] block">Late night hot delivery available</span>
+                <span className="text-white font-semibold block">12:00 PM – 02:30 AM (Weekends)</span>
+                <span className="text-sky-200/70 text-[11px] block">Late night hot delivery available</span>
               </div>
             </div>
           </div>
@@ -140,25 +140,25 @@ export default function Footer() {
         <div className="py-12 flex justify-center overflow-hidden">
           <h2
             onClick={scrollToTop}
-            className="cursor-pointer text-5xl sm:text-7xl md:text-9xl lg:text-[13vw] font-black font-display tracking-tighter uppercase text-transparent transition-all duration-700 hover:text-orange-500/10 hover:drop-shadow-[0_0_35px_rgba(255,75,18,0.4)] whitespace-nowrap"
+            className="cursor-pointer text-4xl sm:text-6xl md:text-8xl lg:text-[10vw] font-black font-display tracking-tighter uppercase text-transparent transition-all duration-700 hover:text-[#1E4FBF]/20 hover:drop-shadow-[0_0_35px_rgba(30,79,191,0.5)] whitespace-nowrap text-center"
             style={{
-              WebkitTextStroke: "1px rgba(255, 255, 255, 0.12)",
+              WebkitTextStroke: "1px rgba(255, 255, 255, 0.15)",
             }}
           >
-            MA FAST FOOD
+            MASHAALLAH FAST FOODS
           </h2>
         </div>
 
         {/* Bottom Bar & Copyright */}
-        <div className="pt-6 border-t border-white/5 flex flex-col sm:flex-row items-center justify-between gap-4 text-xs text-zinc-500">
-          <p>© 2026 {siteConfig.name}. All Rights Reserved. Crafted with pure flavor.</p>
+        <div className="pt-6 border-t border-white/10 flex flex-col sm:flex-row items-center justify-between gap-4 text-xs text-sky-200/60">
+          <p>© 2026 {siteConfig.name}. All Rights Reserved. &quot;{siteConfig.tagline}&quot;</p>
 
           <button
             onClick={scrollToTop}
-            className="flex items-center gap-2 text-zinc-400 hover:text-white transition-colors"
+            className="flex items-center gap-2 text-sky-200 hover:text-white transition-colors"
           >
             <span>Back to top</span>
-            <div className="w-7 h-7 rounded-full bg-white/5 flex items-center justify-center">
+            <div className="w-7 h-7 rounded-full bg-white/10 flex items-center justify-center">
               <ArrowUp className="w-3.5 h-3.5" />
             </div>
           </button>

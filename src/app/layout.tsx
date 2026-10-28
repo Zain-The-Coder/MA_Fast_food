@@ -5,7 +5,6 @@ import { siteConfig } from "@/data/site";
 import { CartProvider } from "@/context/CartContext";
 import SmoothScroll from "@/components/ui/SmoothScroll";
 import Preloader from "@/components/ui/Preloader";
-import CustomCursor from "@/components/ui/CustomCursor";
 import CartDrawer from "@/components/cart/CartDrawer";
 import FloatingActions from "@/components/cart/FloatingCartButton";
 
@@ -24,40 +23,42 @@ const poppins = Poppins({
 });
 
 export const metadata: Metadata = {
-  title: `${siteConfig.name} | Sizzling Smashed Burgers, Loaded Fries & Artisan Pizza`,
+  title: `${siteConfig.name} | Crispy Broast, Zingers, Chinese & Club Sandwiches`,
   description: siteConfig.description,
   keywords: [
     "Fast Food",
-    "Smash Burgers",
+    "Chinese Food",
+    "Broast",
     "Zinger Burger",
-    "Loaded Fries",
-    "Pepperoni Pizza",
-    "MA Fast Food",
-    "Food Street Lahore",
+    "Chicken Shashlik with Rice",
+    "Chicken Manchurian",
+    "Club Sandwich",
+    "MashaAllah Fast Foods",
+    "Food Street",
     "Late Night Delivery",
   ],
   authors: [{ name: siteConfig.name }],
   metadataBase: new URL("https://mafastfood.com"),
   openGraph: {
-    title: `${siteConfig.name} - Taste That Hits Different`,
+    title: `${siteConfig.name} - ${siteConfig.tagline}`,
     description: siteConfig.description,
     url: "https://mafastfood.com",
     siteName: siteConfig.name,
     images: [
       {
-        url: "/assets/generated/hero-burger.webp",
+        url: "/assets/logo/logo-white-bg.png",
         width: 1200,
         height: 675,
-        alt: "MA Fast Food Towering Double Smash Burger",
+        alt: "MashaAllah Fast Foods - Crispy Broast, Zingers, Pastas & Sandwiches",
       },
     ],
     locale: "en_US",
     type: "website",
   },
   icons: {
-    icon: siteConfig.brandAssets.logo,
-    shortcut: siteConfig.brandAssets.logo,
-    apple: siteConfig.brandAssets.logo,
+    icon: "/favicon.ico",
+    shortcut: "/logo.png",
+    apple: "/logo.png",
   },
 };
 
@@ -66,7 +67,7 @@ const jsonLd = {
   "@context": "https://schema.org",
   "@type": "FastFoodRestaurant",
   name: siteConfig.name,
-  image: "https://mafastfood.com/assets/generated/hero-burger.webp",
+  image: "https://mafastfood.com/logo.png",
   description: siteConfig.description,
   url: "https://mafastfood.com",
   telephone: siteConfig.contact.phone,
@@ -83,8 +84,8 @@ const jsonLd = {
     latitude: 31.514684,
     longitude: 74.221528,
   },
-  servesCuisine: ["American", "Burgers", "Pizza", "Fast Food", "Loaded Fries"],
-  priceRange: "Rs. 300 - Rs. 3500",
+  servesCuisine: ["Fast Food", "Broast", "Burgers", "Pasta", "Sandwiches"],
+  priceRange: "Rs. 10 - Rs. 1920",
   openingHoursSpecification: [
     {
       "@type": "OpeningHoursSpecification",
@@ -114,14 +115,11 @@ export default function RootLayout({
           dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
         />
       </head>
-      <body className="bg-[#070605] text-[#fcfcfc] antialiased selection:bg-orange-600 selection:text-white relative">
+      <body className="bg-[#0A1A4A] text-white antialiased selection:bg-[#1E4FBF] selection:text-white relative">
         <CartProvider>
           <SmoothScroll>
             {/* Film grain subtle texture overlay */}
             <div className="fixed inset-0 pointer-events-none z-[80] film-grain select-none" />
-
-            {/* Custom magnetic interactive cursor */}
-            <CustomCursor />
 
             {/* Cinematic Burger Stacking Preloader */}
             <Preloader />

@@ -2,34 +2,47 @@
 
 @layer base {
   :root {
-    --background: #070605;
-    --foreground: #fcfcfc;
+    --brand-primary: #1E4FBF;
+    --brand-primary-hover: #1640A0;
+    --brand-navy: #0A1A4A;
+    --brand-navy-card: #0D2260;
+    --brand-navy-deep: #071333;
+    --brand-white: #FFFFFF;
+    --brand-offwhite: #F7FAFF;
+    --brand-light-card: #FFFFFF;
+    --brand-light-border: #E2E8F5;
+    --brand-accent-red: #D9381E;
+    --brand-accent-glow: rgba(217, 56, 30, 0.4);
+    --brand-blue-glow: rgba(30, 79, 191, 0.4);
+
+    --background: #0A1A4A;
+    --foreground: #FFFFFF;
   }
 
   * {
-    border-color: rgba(255, 255, 255, 0.1);
+    border-color: rgba(30, 79, 191, 0.15);
   }
 
   body {
-    background: var(--background);
+    background: var(--brand-navy);
     color: var(--foreground);
     font-family: var(--font-poppins), system-ui, sans-serif;
     overflow-x: hidden;
   }
 
-  /* Custom high-conversion scrollbar */
+  /* Browser native scrollbar styled for royal blue & navy theme */
   ::-webkit-scrollbar {
-    width: 7px;
+    width: 8px;
   }
   ::-webkit-scrollbar-track {
-    background: #090807;
+    background: #071333;
   }
   ::-webkit-scrollbar-thumb {
-    background: #2a201c;
+    background: #1A3FA0;
     border-radius: 9999px;
   }
   ::-webkit-scrollbar-thumb:hover {
-    background: #ea580c;
+    background: #1E4FBF;
   }
 }
 
@@ -39,7 +52,7 @@
   letter-spacing: 0.04em;
 }
 
-/* Utility to hide scrollbar for tabs */
+/* Utility to hide scrollbar for horizontal tabs */
 .no-scrollbar::-webkit-scrollbar {
   display: none;
 }
@@ -50,5 +63,5 @@
 
 /* Subtle film-grain overlay for cinematic Awwwards texture */
 .film-grain {
-  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.8' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)' opacity='0.035'/%3E%3C/svg%3E");
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.8' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)' opacity='0.02'/%3E%3C/svg%3E");
 }

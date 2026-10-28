@@ -26,12 +26,12 @@ export default function FloatingActions() {
         <MessageSquare className="w-5 h-5 sm:w-6 sm:h-6" />
 
         {/* Hover label */}
-        <span className="absolute right-16 px-3 py-1.5 rounded-xl bg-black/80 backdrop-blur-md text-white text-xs font-bold whitespace-nowrap opacity-0 group-hover:opacity-100 transition-opacity pointer-events-none border border-white/10 shadow-lg">
+        <span className="absolute right-16 px-3 py-1.5 rounded-xl bg-[#0A1A4A]/90 backdrop-blur-md text-white text-xs font-bold whitespace-nowrap opacity-0 group-hover:opacity-100 transition-opacity pointer-events-none border border-white/15 shadow-lg">
           Chat on WhatsApp
         </span>
       </motion.a>
 
-      {/* Floating Cart Button (shows if there's any item, or always for quick access) */}
+      {/* Floating Cart Button */}
       <motion.button
         onClick={openCart}
         aria-label="Open Food Cart"
@@ -39,7 +39,7 @@ export default function FloatingActions() {
         animate={{ scale: 1 }}
         whileHover={{ scale: 1.08 }}
         whileTap={{ scale: 0.95 }}
-        className="relative flex items-center justify-center w-12 h-12 sm:w-14 sm:h-14 rounded-full bg-gradient-to-tr from-orange-600 to-amber-500 text-white shadow-[0_0_25px_rgba(255,75,18,0.5)] border border-orange-400/40 group"
+        className="relative flex items-center justify-center w-12 h-12 sm:w-14 sm:h-14 rounded-full bg-gradient-to-tr from-[#1E4FBF] to-[#1640A0] text-white shadow-[0_0_25px_rgba(30,79,191,0.5)] border border-white/25 group"
       >
         <ShoppingBag className="w-5 h-5 sm:w-6 sm:h-6" />
 
@@ -48,14 +48,14 @@ export default function FloatingActions() {
           <motion.span
             initial={{ scale: 0 }}
             animate={{ scale: 1 }}
-            className="absolute -top-1.5 -right-1.5 w-6 h-6 rounded-full bg-red-600 border-2 border-[#120e0c] text-white text-[11px] font-black flex items-center justify-center shadow-lg"
+            className="absolute -top-1.5 -right-1.5 w-6 h-6 rounded-full bg-[#D9381E] border-2 border-[#0A1A4A] text-white text-[11px] font-black flex items-center justify-center shadow-lg"
           >
             {totalItemsCount}
           </motion.span>
         )}
 
         {/* Hover label */}
-        <span className="absolute right-16 px-3 py-1.5 rounded-xl bg-black/80 backdrop-blur-md text-white text-xs font-bold whitespace-nowrap opacity-0 group-hover:opacity-100 transition-opacity pointer-events-none border border-white/10 shadow-lg">
+        <span className="absolute right-16 px-3 py-1.5 rounded-xl bg-[#0A1A4A]/90 backdrop-blur-md text-white text-xs font-bold whitespace-nowrap opacity-0 group-hover:opacity-100 transition-opacity pointer-events-none border border-white/15 shadow-lg">
           View Cart ({totalItemsCount})
         </span>
       </motion.button>

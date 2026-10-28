@@ -9,14 +9,13 @@ import { siteConfig } from "@/data/site";
 import { useCart } from "@/context/CartContext";
 
 const navLinks = [
-  { name: "Home", href: "#hero" },
-  { name: "Signatures", href: "#signatures" },
-  { name: "Menu", href: "#menu" },
-  { name: "Combos", href: "#deals" },
-  { name: "Our Story", href: "#story" },
-  { name: "Gallery", href: "#gallery" },
-  { name: "Reviews", href: "#reviews" },
-  { name: "Contact", href: "#contact" },
+  { name: "Home", href: "/#hero" },
+  { name: "Menu", href: "/menu" },
+  { name: "Deals", href: "/#deals" },
+  { name: "Our Story", href: "/#story" },
+  { name: "Gallery", href: "/#gallery" },
+  { name: "Reviews", href: "/#reviews" },
+  { name: "Contact", href: "/#contact" },
 ];
 
 export default function Navbar() {
@@ -52,46 +51,34 @@ export default function Navbar() {
         transition={{ duration: 0.35, ease: "easeInOut" }}
         className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
           scrolled
-            ? "bg-[#090807]/80 backdrop-blur-xl border-b border-white/10 shadow-[0_10px_30px_rgba(0,0,0,0.7)] py-3"
+            ? "bg-[#0A1A4A]/90 backdrop-blur-xl border-b border-white/10 shadow-[0_10px_30px_rgba(10,26,74,0.7)] py-3"
             : "bg-transparent py-5"
         }`}
       >
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex items-center justify-between">
-          {/* Brand Logo & Name */}
-          <Link href="#hero" className="flex items-center gap-3 group">
-            <div className="relative w-10 h-10 md:w-12 md:h-12 transition-transform duration-300 group-hover:scale-105">
-              <Image
-                src={siteConfig.brandAssets.logo}
-                alt={siteConfig.name}
-                fill
-                priority
-                className="object-contain drop-shadow-[0_0_15px_rgba(255,75,18,0.5)]"
-              />
-            </div>
-            <div className="flex flex-col">
-              <span className="font-display text-xl md:text-2xl font-black tracking-wider uppercase bg-gradient-to-r from-white via-amber-100 to-orange-400 bg-clip-text text-transparent group-hover:to-orange-500 transition-all">
-                {siteConfig.name}
-              </span>
-              <div className="flex items-center gap-1.5 -mt-1">
-                <span className={`w-2 h-2 rounded-full ${isOpenNow ? "bg-emerald-400 animate-pulse shadow-[0_0_8px_#34d399]" : "bg-red-500"}`} />
-                <span className="text-[10px] font-semibold uppercase tracking-wider text-zinc-400">
-                  {isOpenNow ? "Open Now • Till 2 AM" : "Opens at 12 PM"}
-                </span>
-              </div>
-            </div>
+          {/* Brand Logo with Transparent Background & Subtle Light Drop-Shadow */}
+          <Link href="#hero" className="flex items-center group py-1">
+            <Image
+              src="/logo.png"
+              alt={siteConfig.name}
+              width={1320}
+              height={709}
+              priority
+              className="h-11 sm:h-12 md:h-14 lg:h-16 w-auto object-contain drop-shadow-[0_2px_12px_rgba(255,255,255,0.4)] transition-transform duration-300 group-hover:scale-105"
+            />
           </Link>
 
           {/* Desktop Navigation Links */}
-          <nav className="hidden lg:flex items-center gap-1 bg-white/[0.03] border border-white/10 rounded-full px-5 py-2 backdrop-blur-md">
+          <nav className="hidden lg:flex items-center gap-1 bg-[#0D2260]/60 border border-white/10 rounded-full px-5 py-2 backdrop-blur-md">
             {navLinks.map((link) => (
-              <a
+              <Link
                 key={link.name}
                 href={link.href}
-                className="px-3.5 py-1.5 text-xs font-semibold uppercase tracking-widest text-zinc-300 hover:text-white transition-colors relative group"
+                className="px-3.5 py-1.5 text-xs font-semibold uppercase tracking-widest text-sky-100 hover:text-white transition-colors relative group"
               >
                 <span>{link.name}</span>
-                <span className="absolute bottom-0 left-1/2 w-0 h-[2px] bg-orange-500 transition-all duration-300 -translate-x-1/2 group-hover:w-3/4 rounded-full" />
-              </a>
+                <span className="absolute bottom-0 left-1/2 w-0 h-[2px] bg-[#1E4FBF] transition-all duration-300 -translate-x-1/2 group-hover:w-3/4 rounded-full shadow-[0_0_8px_#1E4FBF]" />
+              </Link>
             ))}
           </nav>
 
@@ -100,8 +87,8 @@ export default function Navbar() {
             {/* Quick Call */}
             <a
               href={`tel:${siteConfig.contact.phone}`}
-              aria-label="Call MA Fast Food"
-              className="hidden sm:flex items-center justify-center w-10 h-10 rounded-full bg-white/5 border border-white/10 text-zinc-300 hover:text-orange-400 hover:border-orange-500/50 hover:bg-orange-500/10 transition-all"
+              aria-label={`Call ${siteConfig.name}`}
+              className="hidden sm:flex items-center justify-center w-10 h-10 rounded-full bg-white/10 border border-white/15 text-sky-100 hover:text-white hover:border-[#1E4FBF] hover:bg-[#1E4FBF]/30 transition-all"
             >
               <Phone className="w-4 h-4" />
             </a>
@@ -110,14 +97,14 @@ export default function Navbar() {
             <button
               onClick={openCart}
               aria-label="View Cart"
-              className="relative flex items-center justify-center w-10 h-10 rounded-full bg-white/5 border border-white/10 text-zinc-200 hover:text-white hover:border-orange-500/40 hover:bg-orange-500/10 transition-all"
+              className="relative flex items-center justify-center w-10 h-10 rounded-full bg-white/10 border border-white/15 text-white hover:border-[#1E4FBF] hover:bg-[#1E4FBF]/30 transition-all"
             >
               <ShoppingBag className="w-4 h-4" />
               {totalItemsCount > 0 && (
                 <motion.span
                   initial={{ scale: 0 }}
                   animate={{ scale: 1 }}
-                  className="absolute -top-1 -right-1 w-5 h-5 rounded-full bg-gradient-to-r from-orange-500 to-red-600 text-[11px] font-black text-white flex items-center justify-center shadow-[0_0_10px_#ff4500]"
+                  className="absolute -top-1 -right-1 w-5 h-5 rounded-full bg-[#D9381E] text-[11px] font-black text-white flex items-center justify-center shadow-[0_0_10px_rgba(217,56,30,0.6)]"
                 >
                   {totalItemsCount}
                 </motion.span>
@@ -129,9 +116,9 @@ export default function Navbar() {
               onClick={openCart}
               className="relative group overflow-hidden rounded-full p-[1px] focus:outline-none"
             >
-              <span className="absolute inset-0 bg-gradient-to-r from-orange-600 via-amber-500 to-red-600 rounded-full animate-gradient-x group-hover:opacity-100 transition-opacity" />
-              <span className="relative flex items-center gap-2 px-5 py-2 rounded-full bg-[#120e0c] transition-colors group-hover:bg-[#1a1411]">
-                <span className="w-2 h-2 rounded-full bg-orange-500 animate-ping" />
+              <span className="absolute inset-0 bg-gradient-to-r from-[#1E4FBF] via-sky-400 to-[#1640A0] rounded-full animate-gradient-x group-hover:opacity-100 transition-opacity" />
+              <span className="relative flex items-center gap-2 px-5 py-2 rounded-full bg-[#0D2260] transition-colors group-hover:bg-[#1A3FA0]">
+                <span className="w-2 h-2 rounded-full bg-[#D9381E] animate-ping" />
                 <span className="text-xs font-black uppercase tracking-wider text-white">
                   Order Now
                 </span>
@@ -142,7 +129,7 @@ export default function Navbar() {
             <button
               onClick={() => setMobileMenuOpen(true)}
               aria-label="Open mobile navigation"
-              className="lg:hidden flex items-center justify-center w-10 h-10 rounded-full bg-white/5 border border-white/10 text-zinc-300 hover:text-white"
+              className="lg:hidden flex items-center justify-center w-10 h-10 rounded-full bg-white/10 border border-white/15 text-white"
             >
               <MenuIcon className="w-5 h-5" />
             </button>
@@ -157,23 +144,19 @@ export default function Navbar() {
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             exit={{ opacity: 0 }}
-            className="fixed inset-0 z-[100] lg:hidden bg-black/80 backdrop-blur-xl flex flex-col justify-between p-6"
+            className="fixed inset-0 z-[100] lg:hidden bg-[#0A1A4A]/95 backdrop-blur-xl flex flex-col justify-between p-6"
           >
             {/* Header in Drawer */}
             <div className="flex items-center justify-between border-b border-white/10 pb-4">
-              <div className="flex items-center gap-3">
-                <div className="relative w-10 h-10">
-                  <Image
-                    src={siteConfig.brandAssets.logo}
-                    alt={siteConfig.name}
-                    fill
-                    className="object-contain"
-                  />
-                </div>
-                <span className="font-display text-xl font-black text-white">
-                  {siteConfig.name}
-                </span>
-              </div>
+              <Link href="#hero" onClick={() => setMobileMenuOpen(false)} className="flex items-center">
+                <Image
+                  src="/logo.png"
+                  alt={siteConfig.name}
+                  width={1320}
+                  height={709}
+                  className="h-11 w-auto object-contain drop-shadow-[0_2px_10px_rgba(255,255,255,0.4)]"
+                />
+              </Link>
               <button
                 onClick={() => setMobileMenuOpen(false)}
                 aria-label="Close menu"
@@ -186,14 +169,14 @@ export default function Navbar() {
             {/* Navigation Links */}
             <nav className="flex flex-col gap-4 py-8">
               {navLinks.map((link) => (
-                <a
+                <Link
                   key={link.name}
                   href={link.href}
                   onClick={() => setMobileMenuOpen(false)}
-                  className="font-display text-3xl font-black uppercase tracking-wider text-zinc-200 hover:text-orange-400 transition-colors"
+                  className="font-display text-3xl font-black uppercase tracking-wider text-white hover:text-sky-300 transition-colors"
                 >
                   {link.name}
-                </a>
+                </Link>
               ))}
             </nav>
 
@@ -204,12 +187,12 @@ export default function Navbar() {
                   setMobileMenuOpen(false);
                   openCart();
                 }}
-                className="w-full py-3.5 rounded-full bg-gradient-to-r from-orange-600 to-red-600 text-white font-bold uppercase tracking-wider text-sm shadow-[0_0_25px_rgba(255,75,18,0.5)]"
+                className="w-full py-3.5 rounded-full bg-[#1E4FBF] hover:bg-[#1640A0] text-white font-bold uppercase tracking-wider text-sm shadow-[0_0_25px_rgba(30,79,191,0.5)] transition-all"
               >
                 View Cart ({totalItemsCount})
               </button>
-              <div className="flex items-center justify-center gap-2 text-xs text-zinc-400">
-                <Clock className="w-3.5 h-3.5 text-orange-400" />
+              <div className="flex items-center justify-center gap-2 text-xs text-sky-200">
+                <Clock className="w-3.5 h-3.5 text-sky-400" />
                 <span>Open: 12:00 PM – 02:30 AM</span>
               </div>
             </div>

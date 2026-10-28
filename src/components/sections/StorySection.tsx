@@ -3,7 +3,7 @@
 import { useEffect, useRef, useState } from "react";
 import Image from "next/image";
 import { motion, useInView } from "framer-motion";
-import { Award, Flame, Heart, Sparkles, Users } from "lucide-react";
+import { Heart, Sparkles } from "lucide-react";
 import { shopStats } from "@/data/testimonials";
 
 function CounterItem({ target, suffix, label, icon }: { target: number; suffix: string; label: string; icon: string }) {
@@ -33,13 +33,13 @@ function CounterItem({ target, suffix, label, icon }: { target: number; suffix: 
   }, [inView, target]);
 
   return (
-    <div ref={ref} className="p-4 rounded-2xl bg-white/[0.03] border border-white/5 backdrop-blur-sm">
+    <div ref={ref} className="p-4 rounded-2xl bg-white border border-[#E2E8F5] shadow-sm">
       <div className="text-2xl mb-1">{icon}</div>
-      <div className="font-display text-3xl sm:text-4xl font-black text-white">
+      <div className="font-display text-3xl sm:text-4xl font-black text-[#0A1A4A]">
         {count}
-        <span className="text-orange-500">{suffix}</span>
+        <span className="text-[#1E4FBF]">{suffix}</span>
       </div>
-      <div className="text-xs uppercase font-bold text-zinc-400 tracking-wider mt-1">
+      <div className="text-xs uppercase font-bold text-slate-500 tracking-wider mt-1">
         {label}
       </div>
     </div>
@@ -48,9 +48,9 @@ function CounterItem({ target, suffix, label, icon }: { target: number; suffix: 
 
 export default function StorySection() {
   return (
-    <section id="story" className="relative py-24 md:py-32 bg-[#090807] overflow-hidden">
-      {/* Background flare */}
-      <div className="absolute top-1/4 right-0 w-[500px] h-[500px] bg-orange-600/10 blur-[150px] pointer-events-none" />
+    <section id="story" className="relative py-24 md:py-32 bg-[#F7FAFF] text-[#0A1A4A] overflow-hidden select-none">
+      {/* Background ambient light */}
+      <div className="absolute top-1/4 right-0 w-[500px] h-[500px] bg-[#1E4FBF]/5 blur-[150px] pointer-events-none" />
 
       <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 items-center">
@@ -63,17 +63,17 @@ export default function StorySection() {
                 whileInView={{ opacity: 1, x: 0 }}
                 viewport={{ once: true }}
                 transition={{ duration: 0.7 }}
-                className="relative w-full aspect-[4/5] rounded-3xl overflow-hidden border border-white/10 shadow-2xl bg-black/50"
+                className="relative w-full aspect-[4/5] rounded-3xl overflow-hidden border border-slate-200 shadow-xl bg-slate-900"
               >
                 <Image
                   src="/assets/shop/image_1.webp"
-                  alt="Inside MA Fast Food Kitchen"
+                  alt="Inside MashaAllah Fast Foods Kitchen"
                   fill
                   className="object-cover"
                 />
-                <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent" />
+                <div className="absolute inset-0 bg-gradient-to-t from-[#0A1A4A]/80 via-transparent to-transparent" />
                 <div className="absolute bottom-6 left-6 right-6">
-                  <span className="text-xs uppercase tracking-widest text-orange-400 font-bold">Open Kitchen Standard</span>
+                  <span className="text-xs uppercase tracking-widest text-sky-300 font-bold">Open Kitchen Standard</span>
                   <p className="text-lg font-black text-white font-display">Where the magic sizzles fresh daily</p>
                 </div>
               </motion.div>
@@ -84,11 +84,11 @@ export default function StorySection() {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ duration: 0.7, delay: 0.2 }}
-                className="absolute -bottom-8 -right-4 sm:-right-8 w-3/5 aspect-square rounded-3xl overflow-hidden border-2 border-orange-500/30 shadow-[0_20px_50px_rgba(0,0,0,0.8)] bg-black"
+                className="absolute -bottom-8 -right-4 sm:-right-8 w-3/5 aspect-square rounded-3xl overflow-hidden border-2 border-[#1E4FBF]/40 shadow-[0_20px_50px_rgba(10,26,74,0.15)] bg-white"
               >
                 <Image
                   src="/assets/shop/image_2.webp"
-                  alt="MA Fast Food Dining Area"
+                  alt="MashaAllah Fast Foods Dining Area"
                   fill
                   className="object-cover"
                 />
@@ -98,11 +98,11 @@ export default function StorySection() {
               <motion.div
                 animate={{ rotate: 360 }}
                 transition={{ duration: 25, repeat: Infinity, ease: "linear" }}
-                className="absolute -top-6 -left-6 w-24 h-24 rounded-full bg-gradient-to-br from-orange-500 to-amber-500 p-0.5 shadow-xl hidden sm:flex items-center justify-center text-center"
+                className="absolute -top-6 -left-6 w-24 h-24 rounded-full bg-gradient-to-br from-[#1E4FBF] to-sky-400 p-0.5 shadow-xl hidden sm:flex items-center justify-center text-center"
               >
-                <div className="w-full h-full bg-[#120e0c] rounded-full flex flex-col items-center justify-center p-2">
-                  <Sparkles className="w-5 h-5 text-amber-400 mb-0.5" />
-                  <span className="text-[9px] font-black tracking-widest uppercase text-white leading-tight">
+                <div className="w-full h-full bg-white rounded-full flex flex-col items-center justify-center p-2">
+                  <Sparkles className="w-5 h-5 text-[#1E4FBF] mb-0.5" />
+                  <span className="text-[9px] font-black tracking-widest uppercase text-[#0A1A4A] leading-tight">
                     100% FRESH
                   </span>
                 </div>
@@ -116,9 +116,9 @@ export default function StorySection() {
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
-              className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-orange-600/15 border border-orange-500/30 text-orange-400 text-xs font-black uppercase tracking-wider mb-4 w-max"
+              className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-[#1E4FBF]/10 border border-[#1E4FBF]/25 text-[#1E4FBF] text-xs font-black uppercase tracking-wider mb-4 w-max"
             >
-              <Heart className="w-3.5 h-3.5 fill-orange-400" />
+              <Heart className="w-3.5 h-3.5 fill-[#1E4FBF]" />
               <span>The Sizzle & The Story</span>
             </motion.div>
 
@@ -127,10 +127,10 @@ export default function StorySection() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ delay: 0.1 }}
-              className="text-3xl sm:text-5xl font-black font-display uppercase tracking-tight text-white leading-tight"
+              className="text-3xl sm:text-5xl font-black font-display uppercase tracking-tight text-[#0A1A4A] leading-tight"
             >
-              WE DON'T DO ORDINARY. <br />
-              <span className="bg-gradient-to-r from-orange-500 via-amber-300 to-yellow-500 bg-clip-text text-transparent">
+              WE DON&apos;T DO ORDINARY. <br />
+              <span className="bg-gradient-to-r from-[#1E4FBF] via-blue-600 to-[#0A1A4A] bg-clip-text text-transparent">
                 WE DO OBSESSION.
               </span>
             </motion.h2>
@@ -140,9 +140,9 @@ export default function StorySection() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ delay: 0.2 }}
-              className="mt-6 text-sm sm:text-base text-zinc-300 font-medium leading-relaxed"
+              className="mt-6 text-sm sm:text-base text-slate-700 font-medium leading-relaxed"
             >
-              MA Fast Food was founded with one stubborn belief: fast food shouldn't mean cutting corners. While others use frozen pre-formed patties, we smash fresh 100% prime beef onto blazing-hot 500° cast griddles until the lacy edges crackle with pure flavor.
+              MashaAllah Fast Foods was founded with one stubborn belief: fast food shouldn&apos;t mean cutting corners. While others take shortcuts, we marinate our chicken for 24 hours in 18 authentic spices, pressure-frying every piece of broast to a crisp golden crunch while keeping the meat juicy and tender right to the bone.
             </motion.p>
 
             <motion.p
@@ -150,9 +150,9 @@ export default function StorySection() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ delay: 0.25 }}
-              className="mt-4 text-sm sm:text-base text-zinc-400 leading-relaxed"
+              className="mt-4 text-sm sm:text-base text-slate-500 leading-relaxed"
             >
-              From our 48-hour slow-fermented artisan sourdough pizza dough to our house-blended smokey sauces and double-fried crispy potatoes, every item on our counter is an homage to honest, soul-satisfying culinary craft.
+              From our rich, velvety Chicken Alfredo pasta and fiery arrabbiata bowls to our giant double-patty smash burgers and triple-decker toasted club sandwiches, every order leaving our counter honors honest, soul-satisfying culinary craft.
             </motion.p>
 
             {/* Live Animated Counters */}
@@ -161,7 +161,7 @@ export default function StorySection() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ delay: 0.3 }}
-              className="grid grid-cols-2 sm:grid-cols-4 gap-3 mt-8 pt-8 border-t border-white/10"
+              className="grid grid-cols-2 sm:grid-cols-4 gap-3 mt-8 pt-8 border-t border-slate-200"
             >
               {shopStats.map((stat, idx) => (
                 <CounterItem
