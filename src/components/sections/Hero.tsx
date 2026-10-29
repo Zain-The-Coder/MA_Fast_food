@@ -242,14 +242,10 @@ export default function Hero() {
           transition={{ duration: 0.5 }}
           className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-white/10 border border-white/20 backdrop-blur-md mb-6 shadow-[0_0_20px_rgba(30,79,191,0.3)]"
         >
-          <Sparkles className="w-3.5 h-3.5 text-sky-300 animate-pulse" />
-          <span className="text-xs font-black uppercase tracking-widest text-white">
-            {slide.badge}
+          <span className="text-xs font-black tracking-widest text-white">
+            Oh ! It's So Tasty
           </span>
-          <span className="w-1 h-1 rounded-full bg-white/40" />
           <div className="flex items-center text-amber-300 text-xs gap-0.5">
-            <Star className="w-3 h-3 fill-amber-300" />
-            <span className="font-bold">4.9</span>
           </div>
         </motion.div>
 

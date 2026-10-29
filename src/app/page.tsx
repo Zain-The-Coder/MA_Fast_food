@@ -24,9 +24,6 @@ export default function Home() {
       {/* Signature Cravings Showcase */}
       <SignatureDishes />
 
-      {/* High-Impact Deals & Combos Showcase */}
-      <DealsSection />
-
       {/* The Story & Kitchen Atmosphere */}
       <StorySection />
 

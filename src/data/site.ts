@@ -29,22 +29,22 @@ export const siteConfig = {
 
   // Contact & Location
   contact: {
-    phone: "+92 300 1234567",
-    displayPhone: "(+92) 300 1234567",
-    whatsappNumber: "923001234567", // numbers only for wa.me link
+    phone: "+92 318 2622266",
+    displayPhone: "0318 2622266",
+    whatsappNumber: "923182622266", // numbers only for wa.me link
     email: "orders@mashaallahfastfoods.com",
     address: {
-      street: "Main Commercial Avenue, Food Street",
-      city: "Lahore",
-      region: "Punjab",
+      street: "Sharifabad Block 1, Gulberg Town",
+      city: "Karachi",
+      region: "Sindh",
       country: "Pakistan",
-      postalCode: "54000",
-      full: "Shop #4, Main Commercial Avenue, Food Street, Lahore, Pakistan",
+      postalCode: "75950",
+      full: "Sharifabad Block 1, Gulberg Town, Karachi, Pakistan",
     },
     // Google Maps Embed & Direction URLs
     maps: {
-      embedUrl: "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d108843.8824874251!2d74.22152865768551!3d31.51468494957644!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x39190483e58107d9%3A0xc23abe6ccc7e2462!2sLahore%2C%20Punjab!5e0!3m2!1sen!2s!4v1700000000000!5m2!1sen!2s",
-      directionsUrl: "https://maps.google.com/?q=MashaAllah+Fast+Foods",
+      embedUrl: "https://maps.google.com/maps?q=Sharifabad+Block+1+Gulberg+Town+Karachi&t=&z=16&ie=UTF8&iwloc=&output=embed",
+      directionsUrl: "https://www.google.com/maps/dir/?api=1&destination=Sharifabad+Block+1,+Gulberg+Town,+Karachi",
     },
   },
 

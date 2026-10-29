@@ -62,7 +62,7 @@ export const galleryItems: GalleryItem[] = [
     category: "Kitchen & Shop",
     src: "/assets/shop/image_3.webp",
     aspectRatio: "square",
-    caption: "Open late night till 2:30 AM every weekend on Food Street.",
+    caption: "Open late night till 2:30 AM every weekend in Sharifabad, Karachi.",
   },
   {
     id: "gal-8",

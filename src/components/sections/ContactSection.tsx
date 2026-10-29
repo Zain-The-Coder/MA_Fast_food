@@ -42,7 +42,7 @@ export default function ContactSection() {
           </h2>
 
           <p className="mt-4 text-sky-200/80 max-w-xl text-sm sm:text-base font-medium">
-            Craving crispy broast, juicy zingers, or creamy pastas? Message us directly on WhatsApp, give us a ring, or swing by our shop on Food Street.
+            Craving crispy broast, juicy zingers, or creamy pastas? Message us directly on WhatsApp, give us a ring, or swing by our shop in Sharifabad, Karachi.
           </p>
         </div>
 
@@ -161,8 +161,17 @@ export default function ContactSection() {
               />
               <div className="absolute top-3 left-3 bg-[#0A1A4A]/90 backdrop-blur-md px-3 py-1.5 rounded-xl border border-white/15 text-xs font-bold text-white flex items-center gap-2">
                 <MapPin className="w-3.5 h-3.5 text-sky-400" />
-                <span>MashaAllah Fast Foods • Food Street</span>
+                <span>MashaAllah Fast Foods • Sharifabad, Karachi</span>
               </div>
+              <a
+                href={siteConfig.contact.maps.directionsUrl}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="absolute top-3 right-3 bg-[#1E4FBF]/90 hover:bg-[#1E4FBF] backdrop-blur-md px-3 py-1.5 rounded-xl border border-white/20 text-xs font-bold text-white flex items-center gap-1.5 transition-colors shadow-lg"
+              >
+                <Navigation className="w-3.5 h-3.5 text-sky-300" />
+                <span>Get Directions</span>
+              </a>
             </div>
 
             {/* Quick Contact Form */}
